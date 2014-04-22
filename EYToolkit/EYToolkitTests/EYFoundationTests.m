@@ -7,17 +7,68 @@
 //
 
 #import <GHUnitIOS/GHUnit.h>
-#import "NSData+EYAdditions.h"
-#import "NSString+EYAdditions.h"
-#import "NSDate+EYAdditions.h"
-#import "NSArray+EYAdditions.h"
-#import "NSDictionary+EYAdditions.h"
+#import "EYFoundationCore.h"
 
 @interface EYFoundationTests : GHTestCase
 
 @end
 
 @implementation EYFoundationTests
+
+- (void)testVersion {
+    GHTestLog(@"current version:%@", [EYToolkitVersion version]);
+    GHAssertEquals([EYToolkitVersion majorVersion], 1, @"latest major version");
+    GHAssertEquals([EYToolkitVersion minorVersion], 0, @"latest minor version");
+    GHAssertEquals([EYToolkitVersion bugfixVersion], 0, @"latest bugfix version");
+}
+
+- (void)testValidString {
+    GHAssertFalse(IsString(@1), @"is not string");
+    GHAssertTrue(IsString(@"1"), @"is string");
+    GHAssertFalse(IsStringWithAnyText(@""), @"no text");
+    GHAssertTrue(IsStringWithAnyText(@"123"), @"has text");
+}
+
+- (void)testValidArray {
+    GHAssertFalse(IsArray(@1), @"is not array");
+    GHAssertTrue(IsArray(@[]), @"is array");
+    GHAssertFalse(IsArrayWithAnyItem(@[]), @"no item");
+    GHAssertTrue(IsArrayWithAnyItem(@[@1]), @"has item");
+}
+
+- (void)testValidDictionary {
+    GHAssertFalse(IsDictionary(@1), @"is not dictionary");
+    GHAssertTrue(IsDictionary(@{}), @"is dictionary");
+    GHAssertFalse(IsDictionaryWithAnyKeyValue(@{}), @"no key vaule");
+    GHAssertTrue(IsDictionaryWithAnyKeyValue(@{@1 : @"1"}), @"has key value");
+}
+
+- (void)testValidSet {
+    GHAssertFalse(IsSet(@1), @"is not set");
+    NSMutableSet *set = [[NSMutableSet alloc] init];
+    GHAssertTrue(IsSet(set), @"is set");
+    GHAssertFalse(IsSetWithAnyItem(set), @"no item");
+    [set addObject:@1];
+    GHAssertTrue(IsSetWithAnyItem(set), @"has item");
+}
+
+- (void)testGeometry {
+    GHAssertEquals(EYRectMakeWithOriginAndSize(CGPointMake(100, 200), CGSizeMake(300, 400)), CGRectMake(100, 200, 300, 400), @"");
+    GHAssertEquals(EYRectMakeWithOrigin(CGPointMake(100, 200), 300, 400), CGRectMake(100, 200, 300, 400), @"");
+    GHAssertEquals(EYRectMakeWithSize(100, 200, CGSizeMake(300, 400)), CGRectMake(100, 200, 300, 400), @"");
+    GHAssertEquals(EYRectContract(CGRectMake(100, 200, 300, 400), 30, 50), CGRectMake(100, 200, 270, 350), @"");
+    GHAssertEquals(EYRectExpand(CGRectMake(100, 200, 300, 400), 30, 50), CGRectMake(100, 200, 330, 450), @"");
+    GHAssertEquals(EYRectShift(CGRectMake(100, 200, 300, 400), 30, 50), CGRectMake(130, 250, 270, 350), @"");
+    GHAssertEquals(EYRectInset(CGRectMake(100, 200, 300, 400), UIEdgeInsetsMake(10, 20, 30, 40)), CGRectMake(120, 210, 240, 360), @"");
+}
+
+- (void)testPaths {
+    GHAssertTrue([EYPathForApp() hasSuffix:@"/Applications"], @"%@", EYPathForApp());
+    GHAssertTrue([EYPathForDocument() hasSuffix:@"/Documents"], @"%@", EYPathForDocument());
+    GHAssertTrue([EYPathForLibCache() hasSuffix:@"/Library/Caches"], @"%@", EYPathForLibCache());
+    GHAssertTrue([EYPathForLibPreferences() hasSuffix:@"/Library/Preferences"], @"%@", EYPathForLibPreferences());
+    GHAssertTrue([EYPathForTmp() hasSuffix:@"/Library/tmp"], @"%@", EYPathForTmp());
+}
 
 #pragma mark - NSData
 - (void)testDataMD5 {
