@@ -1,6 +1,6 @@
 //
 //  NSDictionary+EYAdditions.m
-//  EYFrameworkCore
+//  EYToolkit
 //
 //  Created by Edward Yang on 4/8/13.
 //  Copyright (c) 2013 EdwardYang. All rights reserved.

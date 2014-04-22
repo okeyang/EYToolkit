@@ -1,6 +1,6 @@
 //
 //  UIColor+EYAdditions.m
-//  EYFrameworkUICore
+//  EYToolkit
 //
 //  Created by Edward Yang on 3/21/13.
 //  Copyright (c) 2013 EdwardYang. All rights reserved.

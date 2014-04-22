@@ -1,6 +1,6 @@
 //
-//  EYFrameworkVersion.h
-//  EYFrameworkCore
+//  EYToolkitVersion.h
+//  EYToolkit
 //
 //  Created by Edward Yang on 3/12/13.
 //  Copyright (c) 2013 EdwardYang. All rights reserved.

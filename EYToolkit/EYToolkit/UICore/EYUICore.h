@@ -2,7 +2,7 @@
 //  EYUICore.h
 //  EYToolkit
 //
-//  Created by edwardyang on 14-4-22.
+//  Created by Edward Yang on 14-4-22.
 //  Copyright (c) 2014年 EdwardYang. All rights reserved.
 //
 

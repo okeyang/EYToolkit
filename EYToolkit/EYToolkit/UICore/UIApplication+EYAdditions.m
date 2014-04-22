@@ -1,6 +1,6 @@
 //
 //  UIApplication+EYAdditions.m
-//  EYFrameworkUICore
+//  EYToolkit
 //
 //  Created by Edward Yang on 4/7/13.
 //  Copyright (c) 2013 EdwardYang. All rights reserved.

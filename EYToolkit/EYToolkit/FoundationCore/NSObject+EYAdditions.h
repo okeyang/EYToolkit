@@ -1,6 +1,6 @@
 //
 //  NSObject+EYAdditions.h
-//  EYFrameworkCore
+//  EYToolkit
 //
 //  Created by Edward Yang on 3/15/13.
 //  Copyright (c) 2013 EdwardYang. All rights reserved.
