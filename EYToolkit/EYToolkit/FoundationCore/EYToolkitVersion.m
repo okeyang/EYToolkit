@@ -8,24 +8,24 @@
 
 #import "EYToolkitVersion.h"
 
-static NSString* const EYFrameworkVersionString = @"1.0.0";
+static NSString* const EYToolkitVersionString = @"1.0.0";
 
 @implementation EYToolkitVersion
 
 + (NSString *)version {
-    return EYFrameworkVersionString;
+    return EYToolkitVersionString;
 }
 
 + (NSInteger)majorVersion {
-    return [[[EYFrameworkVersionString componentsSeparatedByString:@"."] objectAtIndex:0] intValue];
+    return [[[EYToolkitVersionString componentsSeparatedByString:@"."] objectAtIndex:0] intValue];
 }
 
 + (NSInteger)minorVersion {
-    return [[[EYFrameworkVersionString componentsSeparatedByString:@"."] objectAtIndex:1] intValue];
+    return [[[EYToolkitVersionString componentsSeparatedByString:@"."] objectAtIndex:1] intValue];
 }
 
 + (NSInteger)bugfixVersion {
-    return [[[EYFrameworkVersionString componentsSeparatedByString:@"."] objectAtIndex:2] intValue];
+    return [[[EYToolkitVersionString componentsSeparatedByString:@"."] objectAtIndex:2] intValue];
 }
 
 @end

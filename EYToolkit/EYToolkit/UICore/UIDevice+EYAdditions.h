@@ -56,6 +56,7 @@ typedef NS_ENUM(NSInteger, UIDevicePlatform) {
     UIDeviceiPhone4,
     UIDeviceiPhone4S,
     UIDeviceiPhone5,
+    // TODO:add 5s, ipad mini, ipad mini2, ipad air
     
     UIDeviceiPod1G,
     UIDeviceiPod2G,
@@ -115,7 +116,7 @@ UIKIT_EXTERN CGAffineTransform rotateTransformForOrientation(UIInterfaceOrientat
 - (NSNumber *)totalDiskSpace;
 - (NSNumber *)freeDiskSpace;
 
-- (NSString *)macaddress;
+- (NSString *)macaddress NS_DEPRECATED_IOS(2_0,7_0); // iOS 7 will return the same static value for all devices.
 
 - (BOOL)hasRetinaDisplay;
 - (UIDeviceFamily)deviceFamily;

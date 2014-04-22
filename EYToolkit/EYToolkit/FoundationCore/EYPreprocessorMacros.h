@@ -24,18 +24,7 @@
                                   @implementation EY_FIX_CATEGORY_BUG_##name @end
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-//Safe Release Macro Function                                                                     //
-////////////////////////////////////////////////////////////////////////////////////////////////////
-#if !__has_feature(objc_arc)
-#define EYSafeRelease(__object) ([__object release], __object = nil);
-#define EYInvalidateTimer(__timer) ([__timer invalidate], __timer = nil);
-
-// Release a CoreFoundation object safely.
-#define EYCFSafeRelease(__ref) (if (nil != (__ref)) {CFRelease(__ref), __ref = nil;})
-#endif
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//Valid Macro Function                                                                            //
+// Valid Macro Function                                                                           //
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 #define IsString(__string) ([(__string) isKindOfClass:[NSString class]])
 #define IsStringWithAnyText(__string) (IsString(__string) && ([((NSString *)__string) length] > 0))
