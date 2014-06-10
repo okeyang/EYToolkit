@@ -107,6 +107,7 @@
 		E0C2A8CD19052359005F02B2 /* EYToolkitTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EYToolkitTests-Prefix.pch"; sourceTree = "<group>"; };
 		E0C2A8CE19052359005F02B2 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E0C2A8D41905250C005F02B2 /* EYFoundationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYFoundationTests.m; sourceTree = "<group>"; };
+		E0D4746D19470D5E00550057 /* EYToolkit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYToolkit.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +169,7 @@
 		E0C2A7EF1904FF4F005F02B2 /* EYToolkit */ = {
 			isa = PBXGroup;
 			children = (
+				E0D4746D19470D5E00550057 /* EYToolkit.h */,
 				E0C2A8191905138C005F02B2 /* FoundationCore */,
 				E0C2A82F1905138C005F02B2 /* UICore */,
 				E0C2A7F01904FF4F005F02B2 /* Supporting Files */,
