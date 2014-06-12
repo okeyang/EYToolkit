@@ -38,6 +38,8 @@
 @property (nonatomic, readonly) CGFloat orientationWidth; // Return the width in portrait or the height in landscape.
 @property (nonatomic, readonly) CGFloat orientationHeight; // Return the height in portrait or the width in landscape.
 
++ (instancetype)viewWithFrame:(CGRect)frame backgroundColor:(UIColor *)color; // Quickly create a view.
+
 - (UIView *)descendantOrSelfWithClass:(Class)cls; // Finds the first descendant view (including this view) that is a member of a particular class.
 - (UIView *)ancestorOrSelfWithClass:(Class)cls; // Finds the first ancestor view (including this view) that is a member of a particular class.
 

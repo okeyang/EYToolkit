@@ -183,4 +183,31 @@
     [superView removeFromSuperview];
 }
 
+- (void)testQuicklyCreate
+{
+    UIView *view = [UIView viewWithFrame:CGRectMake(0, 0, 100, 100) backgroundColor:[UIColor yellowColor]];
+    GHVerifyView(view);
+    
+    UIButton *button = [UIButton buttonWithFrame:CGRectMake(0, 0, 100, 100)
+                                            type:UIButtonTypeSystem
+                                           title:@"Button"
+                                      titleColor:[UIColor blackColor]
+                                       titleFont:[UIFont systemFontOfSize:15.]
+                                           image:nil
+                                 backgroundImage:nil
+                                        forState:UIControlStateNormal
+                                          target:nil
+                                          action:nil
+                                forControlEvents:0];
+    GHVerifyView(button);
+    
+    UILabel *label = [UILabel labelWithFrame:CGRectMake(0, 0, 100, 100)
+                                        text:@"Label"
+                                        font:[UIFont systemFontOfSize:15.f]
+                                   textColor:[UIColor blackColor]
+                             backgroundColor:[UIColor greenColor]
+                               textAlignment:NSTextAlignmentCenter];
+    GHVerifyView(label);
+}
+
 @end

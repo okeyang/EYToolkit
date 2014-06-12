@@ -12,3 +12,6 @@
 #import "UIImage+EYAdditions.h"
 #import "UIView+EYAdditions.h"
 #import "UIWindow+EYAdditions.h"
+#import "UIButton+EYAdditions.h"
+#import "UILabel+EYAdditions.h"
+#import "UITableView+EYAdditions.h"

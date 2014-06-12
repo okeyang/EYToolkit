@@ -10,6 +10,9 @@
 		E02C22EE190613F90085F8CA /* libEYToolkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0C2A7EA1904FF4F005F02B2 /* libEYToolkit.a */; };
 		E0318A2519061DDB006272E4 /* EYUICoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0318A2419061DDB006272E4 /* EYUICoreTests.m */; };
 		E0318A281906505F006272E4 /* picture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E0318A271906505F006272E4 /* picture.jpg */; };
+		E046BC31194958910059E1E5 /* UIButton+EYAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E046BC30194958910059E1E5 /* UIButton+EYAdditions.m */; };
+		E046BC34194975F20059E1E5 /* UILabel+EYAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E046BC33194975F20059E1E5 /* UILabel+EYAdditions.m */; };
+		E046BC371949876C0059E1E5 /* UITableView+EYAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E046BC361949876C0059E1E5 /* UITableView+EYAdditions.m */; };
 		E0C2A7EE1904FF4F005F02B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0C2A7ED1904FF4F005F02B2 /* Foundation.framework */; };
 		E0C2A83F1905138C005F02B2 /* EYToolkitVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C2A81D1905138C005F02B2 /* EYToolkitVersion.m */; };
 		E0C2A8401905138C005F02B2 /* EYGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C2A81F1905138C005F02B2 /* EYGeometry.m */; };
@@ -63,6 +66,12 @@
 		E0318A2419061DDB006272E4 /* EYUICoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYUICoreTests.m; sourceTree = "<group>"; };
 		E0318A2619061E34006272E4 /* EYUICore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYUICore.h; sourceTree = "<group>"; };
 		E0318A271906505F006272E4 /* picture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = picture.jpg; sourceTree = "<group>"; };
+		E046BC2F194958910059E1E5 /* UIButton+EYAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+EYAdditions.h"; sourceTree = "<group>"; };
+		E046BC30194958910059E1E5 /* UIButton+EYAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+EYAdditions.m"; sourceTree = "<group>"; };
+		E046BC32194975F20059E1E5 /* UILabel+EYAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+EYAdditions.h"; sourceTree = "<group>"; };
+		E046BC33194975F20059E1E5 /* UILabel+EYAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+EYAdditions.m"; sourceTree = "<group>"; };
+		E046BC351949876C0059E1E5 /* UITableView+EYAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+EYAdditions.h"; sourceTree = "<group>"; };
+		E046BC361949876C0059E1E5 /* UITableView+EYAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+EYAdditions.m"; sourceTree = "<group>"; };
 		E0C2A7EA1904FF4F005F02B2 /* libEYToolkit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEYToolkit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C2A7ED1904FF4F005F02B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E0C2A7F11904FF4F005F02B2 /* EYToolkit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EYToolkit-Prefix.pch"; sourceTree = "<group>"; };
@@ -228,6 +237,12 @@
 				E0C2A83B1905138C005F02B2 /* UIView+EYAdditions.m */,
 				E0C2A83C1905138C005F02B2 /* UIWindow+EYAdditions.h */,
 				E0C2A83D1905138C005F02B2 /* UIWindow+EYAdditions.m */,
+				E046BC2F194958910059E1E5 /* UIButton+EYAdditions.h */,
+				E046BC30194958910059E1E5 /* UIButton+EYAdditions.m */,
+				E046BC32194975F20059E1E5 /* UILabel+EYAdditions.h */,
+				E046BC33194975F20059E1E5 /* UILabel+EYAdditions.m */,
+				E046BC351949876C0059E1E5 /* UITableView+EYAdditions.h */,
+				E046BC361949876C0059E1E5 /* UITableView+EYAdditions.m */,
 			);
 			path = UICore;
 			sourceTree = "<group>";
@@ -339,13 +354,16 @@
 				E0C2A8421905138C005F02B2 /* NSArray+EYAdditions.m in Sources */,
 				E0C2A84A1905138C005F02B2 /* UIColor+EYAdditions.m in Sources */,
 				E0C2A8431905138C005F02B2 /* NSData+EYAdditions.m in Sources */,
+				E046BC31194958910059E1E5 /* UIButton+EYAdditions.m in Sources */,
 				E0C2A8411905138C005F02B2 /* EYPaths.m in Sources */,
 				E0C2A84D1905138C005F02B2 /* UIView+EYAdditions.m in Sources */,
 				E0C2A8401905138C005F02B2 /* EYGeometry.m in Sources */,
+				E046BC371949876C0059E1E5 /* UITableView+EYAdditions.m in Sources */,
 				E0C2A8471905138C005F02B2 /* NSString+EYAdditions.m in Sources */,
 				E0C2A84E1905138C005F02B2 /* UIWindow+EYAdditions.m in Sources */,
 				E0C2A8491905138C005F02B2 /* UIApplication+EYAdditions.m in Sources */,
 				E0C2A84C1905138C005F02B2 /* UIImage+EYAdditions.m in Sources */,
+				E046BC34194975F20059E1E5 /* UILabel+EYAdditions.m in Sources */,
 				E0C2A83F1905138C005F02B2 /* EYToolkitVersion.m in Sources */,
 				E0C2A8451905138C005F02B2 /* NSDictionary+EYAdditions.m in Sources */,
 				E0C2A84B1905138C005F02B2 /* UIDevice+EYAdditions.m in Sources */,

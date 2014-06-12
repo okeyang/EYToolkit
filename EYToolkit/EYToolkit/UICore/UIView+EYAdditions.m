@@ -182,6 +182,13 @@ EY_FIX_CATEGORY_BUG(UIViewEYAdditions)
     ? self.width : self.height;
 }
 
++ (instancetype)viewWithFrame:(CGRect)frame backgroundColor:(UIColor *)color
+{
+    UIView *view = [[[self class] alloc] initWithFrame:frame];
+    view.backgroundColor = color;
+    return view;
+}
+
 - (UIView*)descendantOrSelfWithClass:(Class)cls {
     if ([self isKindOfClass:cls])
         return self;
