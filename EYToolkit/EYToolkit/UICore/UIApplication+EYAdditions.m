@@ -32,12 +32,19 @@
 
 #pragma mark - App store
 + (BOOL)appStoreWithAppId:(NSString *)appId {
-    NSString* urlPath = [@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=" stringByAppendingString:appId];
+    float iOSVersion = [[UIDevice currentDevice].systemVersion floatValue];
+    NSString *appStoreURLString;
+    if (iOSVersion >= 7.0f) {
+        appStoreURLString = @"itms-apps://itunes.apple.com/app/id";
+    } else {
+        appStoreURLString = @"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=";
+    }
+    NSString* urlPath = [appStoreURLString stringByAppendingString:appId];
     return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlPath]];
 }
 
 + (BOOL)appStoreGiftWithAppId:(NSString *)appId {
-    NSString* urlPath = [NSString stringWithFormat:@"itms-appss://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/giftSongsWizard?gift=1&salableAdamId=%@&productType=C&pricingParameter=STDQ&mt=8&ign-mscache=1", appId];
+    NSString* urlPath = [NSString stringWithFormat:@"itms-apps://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/giftSongsWizard?gift=1&salableAdamId=%@&productType=C&pricingParameter=STDQ&mt=8&ign-mscache=1", appId];
     return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlPath]];
 }
 
