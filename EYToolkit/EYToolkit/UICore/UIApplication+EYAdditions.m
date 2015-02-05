@@ -9,6 +9,7 @@
 #import "UIApplication+EYAdditions.h"
 #import "UIDevice+EYAdditions.h"
 #import "NSString+EYAdditions.h"
+#import "EYPreprocessorMacros.h"
 
 @implementation UIApplication (EYAdditions)
 @dynamic interfaceOrientation, isLandscape, isPortrait, orientationString;
@@ -32,9 +33,8 @@
 
 #pragma mark - App store
 + (BOOL)appStoreWithAppId:(NSString *)appId {
-    float iOSVersion = [[UIDevice currentDevice].systemVersion floatValue];
     NSString *appStoreURLString;
-    if (iOSVersion >= 7.0f) {
+    if (IsOS7OrLater) {
         appStoreURLString = @"itms-apps://itunes.apple.com/app/id";
     } else {
         appStoreURLString = @"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=";
@@ -49,7 +49,17 @@
 }
 
 + (BOOL)appStoreReviewWithAppId:(NSString *)appId {
-    NSString* urlPath = [@"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=" stringByAppendingString:appId];
+    NSString *appStoreURLFormatString;
+    if (IsOS7OrLater) {
+        if (IsOS8OrLater) {
+            appStoreURLFormatString = @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software";
+        } else {
+            appStoreURLFormatString = @"itms-apps://itunes.apple.com/app/id%@";
+        }
+    } else {
+        appStoreURLFormatString = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@";
+    }
+    NSString* urlPath = [NSString stringWithFormat:appStoreURLFormatString, appId];
     return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlPath]];
 }
 

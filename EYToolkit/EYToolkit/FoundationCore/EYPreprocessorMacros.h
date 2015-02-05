@@ -40,4 +40,8 @@
 
 #define IsNumber(__number) ([(__number) isKindOfClass:[NSNumber class]])
 
+#define IsOS6OrLater    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6.0)
+#define IsOS7OrLater    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
+#define IsOS8OrLater    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+
 #endif //EYFrameworkCore_EYPreprocessorMacros_h
