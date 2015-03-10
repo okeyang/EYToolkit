@@ -10,6 +10,9 @@
 
 @interface UIImage (EYAdditions)
 
+// Create a image with color. Size is {1, 1}.
++ (UIImage *)imageWithColor:(UIColor *)color;
+
 /**
  * Creates and returns a new cropped image object.
  * @param rect A rectangle whose coordinates specify the area to create an image from in points.

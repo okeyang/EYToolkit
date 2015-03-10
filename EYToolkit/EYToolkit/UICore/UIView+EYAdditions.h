@@ -52,4 +52,13 @@
  */
 - (CGPoint)originInView:(UIView *)parentView;
 
+// Layer properties, they can use in xib/storyboard file.
+@property (nonatomic) IBInspectable CGFloat cornerRadius;
+@property (nonatomic) IBInspectable CGFloat borderWidth;
+@property (nonatomic) IBInspectable UIColor *borderColor;
+@property (nonatomic) IBInspectable UIColor *shadowColor;
+@property (nonatomic) IBInspectable float shadowOpacity;
+@property (nonatomic) IBInspectable CGSize shadowOffset;
+@property (nonatomic) IBInspectable CGFloat shadowRadius;
+
 @end

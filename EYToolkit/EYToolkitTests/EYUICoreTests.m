@@ -121,6 +121,13 @@
     GHVerifyView(imageView);
 }
 
+- (void)testImageWithColor {
+    UIImage *image = [UIImage imageWithColor:[UIColor redColor]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    imageView.size = CGSizeMake(100, 100);
+    GHVerifyView(imageView);
+}
+
 - (void)testImageTransform {
     UIImage *image = [UIImage imageNamed:@"picture.jpg"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[image imageWithTransformWidth:100 height:200 rotate:NO]];
